@@ -1,1 +1,1 @@
-### dotnet run Foosball.Api && dotnet run Foosball.Service
+dotnet run Foosball.Api && dotnet run Foosball.Service
