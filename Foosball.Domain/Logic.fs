@@ -7,6 +7,7 @@ open Foosball.Domain.SimpleTypes
 open Foosball.Domain.Errors
 open FsToolkit.ErrorHandling
 
+//should include results and validation
 let createFoosballGame (d: {| id: GameId; dt: DateTime; t1id: TeamId; t1n: TeamName; t2id: TeamId; t2n: TeamName |}) =
     let sd: OngoingSetDetails = {
         FirstTeamId = d.t1id; FirstTeamGoals = 0; SecondTeamId = d.t2id; SecondTeamGoals = 0 
@@ -24,6 +25,7 @@ type private FoosballGameResult =
     
 let private winningGoals = 10
 
+// should be cleaner and using functional constructs, not ifs
 let private scoreFirstTeam (setNr: int) (gr: OngoingFoosballGameResult) =
     match gr with
     | ZeroToZero r when setNr = 1 ->
@@ -85,6 +87,7 @@ let private updateGame (gd: FoosballGameDetails) (gr: FoosballGameResult) =
     | CompletedGame c ->
         CompletedFoosballGame (gd, c)
 
+// should be better state machine using functional constructs
 let scoreGoal (fg: FoosballGame) (setNr: int) (tid: TeamId) =
     match fg with
     | CompletedFoosballGame _ -> Error CannotScoreInCompletedGame

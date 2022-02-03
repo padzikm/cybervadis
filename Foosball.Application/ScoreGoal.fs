@@ -51,6 +51,7 @@ module Implementation =
                 return Ok ()
             }
     
+    //should use command storage for event sourcing, emit event for read model update and optimistic concurrency for model update
     type ScoreGoalHandler(repo: IRepository) =
         interface IHandleMessages<ScoreGoalCommand> with
             member this.Handle(message, context) =

@@ -9,6 +9,7 @@ type TeamName = private TeamName of string
 
 module TeamName =
     
+    //should include validation
     let create (s: string) =
 //        let f _ = TeamName s
 //        let r = s |> Result.requireNotNull Null |> Result.mapError StringError

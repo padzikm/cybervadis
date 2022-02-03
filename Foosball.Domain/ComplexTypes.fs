@@ -18,6 +18,7 @@ type CompletedSetDetails =
         LooserTeamGoals: int
     }
 
+//should be easier configurable for more than 3 sets
 type OngoingFoosballGameResult =
     | ZeroToZero of OngoingSetDetails
     | OneToZero of CompletedSetDetails * OngoingSetDetails

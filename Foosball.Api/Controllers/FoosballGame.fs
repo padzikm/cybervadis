@@ -46,6 +46,7 @@ type FoosballGameController (logger: ILogger<FoosballGameController>, dispatch: 
         let u = q |> AsyncResult.foldResult (fun x -> this.Ok x :> ActionResult) (fun x -> this.BadRequest() :> ActionResult)
         u
         
+    //should be splitted to async process with redirecting to task resource for waiting for result
     [<HttpPost("game/{id}/score")>]
     member this.ScoreGoal(id: Guid, req: ScoreGoalRequest) =
         let cmd = ScoreGoalCommandRequest(id, req.TeamId, req.SetNr)

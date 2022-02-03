@@ -7,6 +7,7 @@ open System.Linq
 open Foosball.Domain.ComplexTypes
 open Foosball.Domain.SimpleTypes
 
+//should include error handling and optionally use interpreters
 type IRepository =
     abstract member SaveGame: FoosballGame -> Async<unit>
     abstract member GetGame: Guid -> Async<FoosballGame>
