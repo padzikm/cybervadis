@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarnOn>3390;$(WarnOn)</WarnOn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Errors.fs" />
+    <Compile Include="SimpleTypes.fs" />
+    <Compile Include="ComplexTypes.fs" />
+    <Compile Include="DomainEvents.fs" />
+    <Compile Include="Logic.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharpPlus" Version="1.2.2" />
+    <PackageReference Include="FsToolkit.ErrorHandling" Version="2.13.0" />
+  </ItemGroup>
+
+</Project>

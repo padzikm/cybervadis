@@ -1,0 +1,14 @@
+namespace Foosball.Application.Database
+
+open System
+open System.Collections.Generic
+open System.Threading.Tasks
+open System.Linq
+open Foosball.Domain.ComplexTypes
+open Foosball.Domain.SimpleTypes
+
+type IRepository =
+    abstract member SaveGame: FoosballGame -> Async<unit>
+    abstract member GetGame: Guid -> Async<FoosballGame>
+    abstract member GetGames: DateTime -> Async<FoosballGame list>
+    
